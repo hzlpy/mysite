@@ -1,8 +1,8 @@
 # mysite
 
 ## polls
-- [ ] demo
+- [x] demo
 
 ## project
-- [ ] apis
-- [x] UI
+- [x] apis
+- [ ] UI
