@@ -3,27 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <!-- 引入样式 -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>开始使用Layui</title>
+  {% load staticfiles %}
+  <link rel="stylesheet" type="text/css" href="{% static 'apis/layui.css' %}" />
 </head>
 <body>
-  <div id="app">
-    <el-button @click="visible = true">按钮</el-button>
-    <el-dialog v-model="visible" title="Hello world">
-      <p>欢迎使用 Element</p>
-    </el-dialog>
-  </div>
+    <div class="x-accordion" x-role="accordion">
+        <div class="x-panel x-panel-collapsed">
+            <div class="x-panel-header">
+                标题 1
+            </div>
+            <div class="x-panel-body">
+                正文 1
+            </div>
+        </div>
+        <div class="x-panel x-panel-expanded">
+            <div class="x-panel-header">
+                标题 2
+            </div>
+            <div class="x-panel-body">
+                正文 2
+            </div>
+        </div>
+        <div class="x-panel x-panel-collapsed">
+            <div class="x-panel-header">
+                标题 3
+            </div>
+            <div class="x-panel-body">
+                正文 3
+            </div>
+        </div>
+    </div>
 </body>
-  <!-- 先引入 Vue -->
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <!-- 引入组件库 -->
-  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      data: function(){
-        return { visible: false }
-      }
-    })
-  </script>
+<script src="../layui.js"></script>
 </html>
-
