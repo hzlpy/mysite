@@ -1,36 +1,26 @@
-<!-- 引入样式 -->
-<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
-<!-- 先引入 Vue -->
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-<!-- 引入组件库 -->
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-{% if latest_api_list %}
+{% if latest_project_list %}
     <ul>
-    {% for api in latest_api_list %}
+    {% for peoject in latest_project_list %}
         <li> 
-            <a href = "/api/{{api.id}}/">{{api.api_name}}</a>
+            <a href = "/project/{{project.id}}/">{{api.project_name}}</a>
             </br>
-            url:<input type="text" id="url"  value = "{{api.api_url}}"> 
-            url:<el-input v-model="input" value = "{{api.api_url}}"> </el-input> 
-            </br>
-            parms:<input type="text" id="parms" value = "{{api.api_parms}}"> 
-            </br>
-            method:<input type="text" id="method" value = "{{api.api_method}}">
+            <input type="text" id="name"  value = "{{project.project_name}}"> 
+            <input type="text" id="date" value = "{{project.add_project_date}}">
             </br>
             <button type="button" onclick="sendRequest()"> click me </button>
         </li>
     {% endfor %}
     </ul>
 {% else %}
-    <p>No api are available. </p>
+    <p>No project are available. </p>
 {% endif %}
 
 <script>
-    var req_url = document.getElementById("url").value;
-    var req_parms = document.getElementById("parms").value;
-    var req_method = document.getElementById("method").value;
+    //var req_url = document.getElementById("url").value;
+    //var req_parms = document.getElementById("parms").value;
+    //var req_method = document.getElementById("method").value;
     function sendRequest() {
-        var request = req_url + "?" + req_parms;
+        //var request = req_url + "?" + req_parms;
         alert("send request:" + req_method + " " + request);
         //$.ajax({
         //    type: req_method,

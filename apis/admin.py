@@ -1,5 +1,5 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Api
-admin.site.register(Api)
+from .models import Project
+admin.site.register(Project)
