@@ -37,6 +37,14 @@ def detail(request, project_id):
         raise Http404("Project does not exist")
     return render(request, 'apis/detail.html', {'project': project})
 
+def api(request, project_id):
+    try:
+        api = Api.objects.get(pk=project_id)
+    except Project.DoesNotExist:
+        raise Http404("Api does not exist")
+    return render(request, 'apis/api.html', {'api': api})
+    
+
 def results(request, project_id):
     response = "You're looking at the result of api %s."
     return HttpResponse(response % project_id)
